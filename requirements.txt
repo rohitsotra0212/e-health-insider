@@ -1,0 +1,14 @@
+pandas 
+numpy 
+streamlit 
+langchain-community
+langchain-openai 
+langchain-faiss
+faiss-cpu 
+python-dotenv 
+openpyxl
+crewai
+crewai-tools
+reportlab
+pypdf
+pdfplumber
