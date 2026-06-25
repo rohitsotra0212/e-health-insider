@@ -7,6 +7,7 @@ import streamlit as st
 import pdfplumber
 from dotenv import load_dotenv
 from typing_extensions import TypedDict, NotRequired
+from pathlib import Path
 
 from langgraph.graph import StateGraph, START, END
 from langchain_community.document_loaders import PyPDFLoader
@@ -744,7 +745,9 @@ uploaded_file = st.file_uploader(
 #    value=r"F:\GEN_AI\Case_Study\EHealth_insight\prompt\prompt.md"
 #)
 
-prompt_file = r"F:\GEN_AI\Case_Study\EHealth_insight\prompt\prompt.md"
+#prompt_file = r"F:\GEN_AI\Case_Study\EHealth_insight\prompt\prompt.md"
+BASE_DIR = Path(__file__).resolve().parent
+prompt_file = BASE_DIR / "prompt" / "prompt.md"
 
 if uploaded_file is not None:
     st.info(f"Uploaded file: {uploaded_file.name}")
@@ -772,7 +775,7 @@ if st.button("Process Lab Report"):
                     "username": username,
                     "password": user_password,
                     "uploaded_file_path": saved_pdf_path,
-                    "prompt_file": prompt_file
+                    "prompt_file": str(prompt_file)
                 })
 
             if result.get("error"):
