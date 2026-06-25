@@ -1,6 +1,7 @@
 pandas 
 numpy 
 streamlit 
+langgraph
 langchain-community
 langchain-openai  
 python-dotenv 
@@ -8,3 +9,4 @@ openpyxl
 reportlab
 pypdf
 pdfplumber
+reportlab
